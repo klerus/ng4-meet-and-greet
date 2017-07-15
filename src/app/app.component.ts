@@ -26,4 +26,14 @@ export class AppComponent {
       })
     })
   }
+
+  public sort (key, ascending = true) {
+    this.products = (<any>Object).values(data).sort((a, b) => {
+      var x = a[key]; var y = b[key];
+      return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    })
+    if (!ascending) {
+      this.products.reverse()
+    }
+  }
 }
