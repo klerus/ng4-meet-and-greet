@@ -7,15 +7,18 @@ import { ListComponent } from '../list/list.component';
 })
 export class ListFeaturedComponent extends ListComponent implements OnInit {
 
-  title : string = 'Featured list'
-
+  title: string = 'Featured list';
 
   constructor() {
     super();
   }
 
   ngOnInit() {
-    this.products = this.products.filter((item) => { return item.featured })
+    this.products = this.products.filter((item) => {
+      // const featured = item.featured;
+      // console.log(featured);
+      return item.featured;
+    })
   }
 
 }
