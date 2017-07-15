@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductTileComponent} from '../product-tile/product-tile.component';
 
 @Component({
   selector: 'app-products-list',
@@ -21,10 +22,11 @@ class Product {
   name: string;
   price: number;
   promoted: boolean;
-
-  constructor(name: string, price: number, promoted: boolean) {
+  constructor(name, price, promoted) {
     this.name = name;
     this.price = price;
     this.promoted = promoted;
   }
 }
+
+
