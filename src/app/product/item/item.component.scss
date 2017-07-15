@@ -1,0 +1,24 @@
+.product-image {
+  width: 100%;
+}
+
+.featured {
+
+  border-color: lightgreen;
+
+
+  &:after {
+    width: 30px;
+    height: 30px;
+    content: "!";
+    text-align: center;;
+    color: green;
+    position: absolute;
+    right: 30px;
+    line-height: 30px;
+    top: 0;
+    font-size: 25px;
+    font-weight: bold;
+    background: lightgreen;
+  }
+}

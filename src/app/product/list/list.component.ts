@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Product } from '../item/item.component';
 
 @Component({
   selector: 'product-list',
@@ -7,26 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  products = [
-    {
-      name: 'Product 1',
-      price: 12.0,
-      description: 'Lorem ipsum dolor sit amet, ...',
-      imgUrl: 'http://via.placeholder.com/350x150'
-    },
-    {
-      name: 'Product 2',
-      price: 12.0,
-      description: 'Lorem ipsum dolor sit amet, ...',
-      imgUrl: 'http://via.placeholder.com/350x150'
-    },
-    {
-      name: 'Product 3',
-      price: 12.0,
-      description: 'Lorem ipsum dolor sit amet, ...',
-      imgUrl: 'http://via.placeholder.com/350x150'
-    }
-  ]
+  @Input() public products : Array<Product>;
+  title : string = 'Prouct list'
+
 
   constructor() { }
 
