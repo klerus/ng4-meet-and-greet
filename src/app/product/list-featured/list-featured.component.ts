@@ -15,7 +15,7 @@ export class ListFeaturedComponent extends ListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.products  = this.products.filter((item) => { return item.featured })
+    this.products = this.products.filter((item) => { return item.featured })
   }
 
 }

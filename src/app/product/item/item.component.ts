@@ -1,10 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 export class Product {
+  id: number;
   name: string;
-  value: number;
+  price: number;
   description: string;
   featured: boolean = false;
+
+  constructor () {
+
+  }
 }
 
 @Component({
@@ -21,6 +26,7 @@ export class ItemComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }

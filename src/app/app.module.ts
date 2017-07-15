@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { ItemComponent } from './product/item/item.component';
 import { ListComponent } from './product/list/list.component';
 import { ListFeaturedComponent } from './product/list-featured/list-featured.component';
+import { ProductFilterComponent } from './product/product-filter/product-filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemComponent,
     ListComponent,
-    ListFeaturedComponent
+    ListFeaturedComponent,
+    ProductFilterComponent
   ],
   imports: [
     BrowserModule

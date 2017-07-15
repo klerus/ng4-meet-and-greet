@@ -1,8 +1,8 @@
 <div class="col-sm-6 col-md-4">
   <div class="thumbnail" [ngClass]="{'featured' : product.featured }">
-    <img src="{{ product.imgUrl }}" class="img-responsive product-image">
+    <img src="http://lorempixel.com/350/200/food/{{ product.id % 11 }}/" class="img-responsive product-image">
     <div class="caption">
-      <h3>{{ product.name }}</h3>
+      <h3 class="truncate">{{ product.name }}</h3>
       <p>{{ product.description }}</p>
       <h5 class="pull-right">{{ product.price | currency }}</h5>
       <div class="clearfix"></div>
