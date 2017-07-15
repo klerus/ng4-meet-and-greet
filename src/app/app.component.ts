@@ -1,39 +1,31 @@
 import { Component } from '@angular/core';
 import * as data from './data.json';
+import {ProductsRepositoryService} from './products-repository.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-
 export class AppComponent {
   title = 'app';
+  prodRepo: ProductsRepositoryService;
   products = [];
 
-  constructor () {
-    this.products = (<any>Object).values(data);
+  constructor (prodRepo: ProductsRepositoryService) {
+    this.prodRepo = prodRepo;
+    this.products = this.prodRepo.getProducts();
   }
 
   public filter (inputQuery) {
-    this.products = (<any>Object).values(data).filter(function (item) {
-      return Object.keys(item).map((key) => {
-        if (item[key] !== null) {
-          return item[key].toString().toLowerCase().indexOf(inputQuery) >= 0
-        }
-      }).reduce(function(previousValue, currentValue, index, array) {
-        return previousValue || currentValue;
-      })
-    })
+    this.prodRepo.filterQuery = inputQuery;
+    this.products = this.prodRepo.getProducts();
   }
 
   public sort (key, ascending = true) {
-    this.products = (<any>Object).values(data).sort((a, b) => {
-      var x = a[key]; var y = b[key];
-      return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-    })
-    if (!ascending) {
-      this.products.reverse()
-    }
+    this.prodRepo.orderKey = key;
+    this.prodRepo.orderAscending = ascending;
+
+    this.products = this.prodRepo.getProducts();
   }
 }
