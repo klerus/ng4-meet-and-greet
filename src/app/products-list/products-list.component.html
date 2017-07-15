@@ -1,1 +1,7 @@
-<div *ngFor="let product of products"><app-product-tile [product]="product"></app-product-tile></div>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let product of products">
+      <app-product-tile [product]="product"></app-product-tile>
+    </div>
+  </div>
+</div>
