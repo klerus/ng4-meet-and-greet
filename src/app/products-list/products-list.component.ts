@@ -7,25 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsListComponent implements OnInit {
 
+  public products: Array<Product> = [];
   constructor() { }
 
   ngOnInit() {
+    this.products.push(new Product('Coffee', 5.99, false));
+    this.products.push(new Product('Tea', 2.99, false));
+    this.products.push(new Product('Burger', 15.99, true));
   }
+}
 
-  public products: Array<object> = [
-    {
-      name: 'Coffee',
-      price: 5.99,
-      promoted: false
-    }, {
-      name: 'Tea',
-      price: 3.50,
-      promoted: false
-    }, {
-      name: 'Burger',
-      price: 19.99,
-      promoted: true
-    }
-  ];
+class Product {
+  name: string;
+  price: number;
+  promoted: boolean;
 
+  constructor(name: string, price: number, promoted: boolean) {
+    this.name = name;
+    this.price = price;
+    this.promoted = promoted;
+  }
 }
