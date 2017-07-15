@@ -1,16 +1,9 @@
 <div class="container">
   <div class="row">
-    <!--<app-search></app-search>-->
-    <div class="input-group">
-      <span class="input-group-addon" id="basic-addon1">?</span>
-      <input type="text" class="form-control" placeholder="Search" [formControl]="searchInput">
-    </div>
-    <div class="btn-group" role="group" aria-label="Filtering">
-      <button #button (click)="sort(button)" type="button" class="btn btn-secondary">Price</button>
-    </div>
+    <app-search></app-search>
   </div>
   <div class="row">
-    <div *ngFor="let product of filteredProducts">
+    <div *ngFor="let product of products">
       <app-product-tile [product]="product"></app-product-tile>
     </div>
   </div>
